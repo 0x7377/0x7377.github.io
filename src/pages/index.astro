@@ -12,6 +12,10 @@ const pubGroups = [
   { title: 'International', items: publications.filter((p) => p.group === 'international') },
   { title: 'Domestic (Korean)', items: publications.filter((p) => p.group === 'domestic') },
 ].filter((g) => g.items.length > 0);
+const projectGroups = [
+  { title: 'Research & Engineering', items: projects.filter((p) => p.group === 'research') },
+  { title: 'Live-fire Cyber Exercises', items: projects.filter((p) => p.group === 'exercise') },
+].filter((g) => g.items.length > 0);
 const hasCorresponding = publications.some((p) => p.authors.some((a) => a.corresponding));
 
 const contactLinks = profile.links.filter((l) => l.url);
@@ -75,13 +79,18 @@ const cvUrl = profile.links.find((l) => l.label === 'CV')?.url;
 
   <section id="projects">
     <h2>Projects</h2>
-    {projects.map((p) => (
-      <Item>
-        <div class="title">{p.title}</div>
-        <div set:html={md(p.description)} />
-        {p.meta && <div class="muted">{p.meta}</div>}
-        <Links links={p.links} />
-      </Item>
+    {projectGroups.map((g) => (
+      <>
+        <h3>{g.title}</h3>
+        {g.items.map((p) => (
+          <Item>
+            <div class="title">{p.title}</div>
+            <div set:html={md(p.description)} />
+            {p.meta && <div class="muted">{p.meta}</div>}
+            <Links links={p.links} />
+          </Item>
+        ))}
+      </>
     ))}
   </section>
 

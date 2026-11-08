@@ -1,7 +1,7 @@
 # Newest first. Keep about five recent items. Text accepts inline Markdown.
 
 - date: Dec 2026
-  text: Our paper on [ANCHOR](#projects) will be presented at ACSAC 2026.
+  text: Our paper on [ANCHOR](#publications) will be presented at ACSAC 2026.
 - date: Sep 2026
   text: "[PHALANX](#projects) was deployed in live operation during APEX 2026."
 - date: Sep 2026

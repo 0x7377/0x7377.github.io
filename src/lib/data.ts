@@ -42,6 +42,7 @@ export const news = load('news.yaml', newsSrc, z.array(z.object({
 })));
 
 export const projects = load('projects.yaml', projectsSrc, z.array(z.object({
+  group: z.enum(['research', 'exercise']).default('research'),
   title: z.string(),
   description: z.string(),
   meta: z.string().optional(),
