@@ -6,7 +6,9 @@
     An autonomous blue-team system that covers the full range of defensive operations,
     including detection, response, and system hardening. Deployed in live operation at APEX 2026.
   meta: Institutional project · Proposed and led the project, and implemented the entire system.
-  links: []
+  links:
+    - label: news
+      url: https://m.etnews.com/20260921000352?SNS=00002
 
 - title: GNSS Spoofing Detection (Google Summer of Code 2022)
   description: >-
@@ -24,16 +26,25 @@
     International live-fire cyber defense exercise organized by the NATO CCDCOE.
     Member of the Republic of Korea national team.
   meta: NATO CCDCOE · May 2026
+  links:
+    - label: news
+      url: https://biz.chosun.com/en/en-it/2026/04/20/HFGTESSFF5DPTFTVKZZ6FSBPK4/
 
 - group: exercise
   title: APEX (Allied Power Exercise)
   description: >-
-    Multinational allied cyber exercise.
-  meta: Participated in 2025 and 2026
+    International live-fire cyber exercise hosted by the NIS and the NATO CCDCOE.
+  meta: NIS & NATO CCDCOE · Participated in 2025 and 2026
+  links:
+    - label: website
+      url: https://cybersummit.kr/en/archive
 
 - group: exercise
   title: Defence Cyber Marvel 3 (DCM3)
   description: >-
     Multinational cyber defense exercise led by the British Army with 17 participating nations.
-    Won 1st place.
+    Won 1st place as part of a joint Korea–UK team.
   meta: British Army · Feb 2024
+  links:
+    - label: news
+      url: https://en.yna.co.kr/view/AEN20240221006200315

@@ -32,7 +32,8 @@ nav .ext { margin-left: auto; color: var(--link); }
 h1 { font-size: 30px; font-weight: 400; margin: 0 0 14px; }
 .intro p { margin: 0 0 12px; text-align: justify; }
 .contact { margin-top: 14px; }
-.photo { width: 180px; height: 220px; border-radius: 8px; object-fit: cover; }
+/* desktop: start the photo at the first intro paragraph (h1 line height + its bottom margin) */
+.photo { width: 180px; height: 220px; border-radius: 8px; object-fit: cover; margin-top: calc(30px * 1.55 + 14px); }
 .placeholder { background: var(--thumb); display: grid; place-items: center; color: #999; font-size: 13px; }
 
 /* sections */
@@ -55,7 +56,7 @@ footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line);
 
 @media (max-width: 640px) {
   .intro { grid-template-columns: 1fr; gap: 16px; padding-top: 24px; }
-  .photo { order: -1; width: 130px; height: 160px; }
+  .photo { order: -1; width: 130px; height: 160px; margin-top: 0; }
   .intro p { text-align: left; }
   nav .ext { margin-left: 0; }
 }
