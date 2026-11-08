@@ -1,0 +1,25 @@
+---
+// GitHub Pages serves this for any unknown path on the user site.
+// The blog used to live at the site root and now lives under /blog/, so an old
+// post URL like /Security/Pentesting/... is forwarded to /blog/Security/Pentesting/...
+// Paths already under /blog/ are not forwarded again (prevents a redirect loop).
+import Base from '../layouts/Base.astro';
+import { profile, withBase } from '../lib/data';
+
+const BLOG_PATH = '/blog';
+---
+<Base title={`Page not found · ${profile.name}`}>
+  <meta name="robots" content="noindex" slot="head" />
+  <script is:inline define:vars={{ BLOG_PATH }}>
+    (function () {
+      var p = location.pathname;
+      if (p === BLOG_PATH || p.indexOf(BLOG_PATH + '/') === 0) return;
+      location.replace(BLOG_PATH + p + location.search + location.hash);
+    })();
+  </script>
+  <section style="padding: 48px 0;">
+    <h1>Page not found</h1>
+    <p>If you followed an old link to a blog post, it has moved under <a href={`${BLOG_PATH}/`}>/blog/</a>.</p>
+    <p><a href={withBase('')}>Home</a> / <a href={profile.writing_url}>Writing</a></p>
+  </section>
+</Base>

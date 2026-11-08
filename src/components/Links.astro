@@ -1,0 +1,11 @@
+---
+// Renders "[a | b | c]". External links open in a new tab.
+interface Props { links: { label: string; url: string }[] }
+const links = Astro.props.links.filter((l) => l.url);
+const external = (url: string) => /^https?:\/\//.test(url);
+---
+{links.length > 0 && (
+  <div>[{links.map((l, i) => (
+    <>{i > 0 && ' | '}<a href={l.url} target={external(l.url) ? '_blank' : undefined} rel={external(l.url) ? 'noopener' : undefined}>{l.label}</a></>
+  ))}]</div>
+)}

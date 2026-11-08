@@ -1,0 +1,27 @@
+# Two lines at most per project: what it is → where it was used or published.
+
+- title: "PHALANX: Autonomous Cyber Defense"
+  description: >-
+    An autonomous blue-team system that covers the full range of defensive operations,
+    including detection, response, and system hardening. Deployed in live operation at APEX 2026.
+  meta: Institutional project · Proposed and led the project, and implemented the entire system.
+  links: []
+
+- title: "ANCHOR: Adaptive Navigation for Cybersecurity Hybrid Ontology Reasoning"
+  description: >-
+    A schema-agnostic system that builds cyber threat intelligence knowledge graphs from unstructured
+    reports, combining LLM-guided ontology navigation with SHACL validation. With local LLMs, it retains
+    over 97% of enterprise-LLM performance. Accepted to ACSAC 2026 [C2].
+  links:
+    - label: arXiv
+      url: https://arxiv.org/abs/2606.01208
+
+- title: GNSS Spoofing Detection (Google Summer of Code 2022)
+  description: >-
+    Autoencoder-based anomaly detection for spoofing attacks on GNSS receivers,
+    developed for the GNSS-SDR open-source project.
+  links:
+    - label: GSoC
+      url: https://summerofcode.withgoogle.com/archive/2022/projects/2HsxUfPb
+    - label: code
+      url: https://github.com/seki5405/gnss_spoof_detector

@@ -1,0 +1,40 @@
+# Basic profile. Text fields accept inline Markdown ([text](url), *italic*, **bold**).
+
+name: Seonwoo Kim
+description: Cybersecurity researcher at the Ministry of National Defense, Republic of Korea, working at the intersection of security and AI.
+
+# Author names (as written in publications.bib) that are highlighted as you.
+self_names:
+  - Kim, Seonwoo
+
+intro:
+  - >-
+    I am a cybersecurity researcher at the [Ministry of National Defense, Republic of Korea](https://www.mnd.go.kr),
+    where I have worked on cyber operations, incident response, and digital forensics since 2015.
+    I am currently on secondment as a security analyst at a national agency.
+    I received my M.S. in Computer Science from the [University of Colorado Boulder](https://www.colorado.edu),
+    where I worked with Prof. Sangtae Ha, and my B.S. in Electronic Engineering from the
+    [Korea Military Academy](https://www.kma.ac.kr).
+  - >-
+    My interests lie at the intersection of security and AI. I have worked on both sides of this area,
+    from hands-on security operations to machine learning research, and I am particularly interested
+    in AI systems that can support and automate real-world security work.
+
+# Shown under the intro, in this order. Leave a url empty to hide that link.
+links:
+  - label: CV
+    url: ""            # TODO: add CV PDF (e.g. /cv.pdf in public/)
+  - label: Email
+    url: ""            # TODO: confirm whether to publish an email address
+  - label: Google Scholar
+    url: ""            # TODO
+  - label: GitHub
+    url: https://github.com/0x7377
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/seonwoo-kim-2943b9237
+
+# Profile photo in public/ (e.g. /images/profile.jpg). Empty = no photo (placeholder in dev only).
+photo: /images/profile.jpg
+
+# External link at the right end of the menu.
+writing_url: https://0x7377.github.io/blog/

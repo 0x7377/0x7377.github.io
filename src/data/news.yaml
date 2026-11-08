@@ -1,0 +1,14 @@
+# Newest first. Keep about five recent items. Text accepts inline Markdown.
+
+- date: Dec 2026
+  text: Our paper on [ANCHOR](#projects) will be presented at ACSAC 2026.
+- date: Sep 2026
+  text: "[PHALANX](#projects) was deployed in live operation during APEX 2026."
+- date: Sep 2026
+  text: Participated in APEX 2026 (Allied Power Exercise) on the red team and the AI blue team.
+- date: May 2026
+  text: Led Linux client/server defense for the Republic of Korea national team at Locked Shields 2026, the NATO CCDCOE live-fire cyber defense exercise.
+- date: Sep 2025
+  text: Our team won 3rd place in the Public Sector division at CCE 2025 (Cyber Conflict Exercise).
+- date: "2025"
+  text: Participated in APEX 2025 (Allied Power Exercise).   # TODO: month and role

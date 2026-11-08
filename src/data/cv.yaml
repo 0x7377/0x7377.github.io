@@ -1,0 +1,82 @@
+# CV sections shown on the homepage, newest first.
+# Fields are joined with ", " in this order. Leave optional fields out.
+
+education:
+  - degree: M.S. in Computer Science
+    school: University of Colorado Boulder
+    place: CO, USA
+    year: "2023"
+    details:
+      - "Research: reinforcement-learning-based cloud resource scheduling"
+  - degree: B.S. in Electronic Engineering
+    school: Korea Military Academy
+    place: Seoul, Republic of Korea
+    year: "2015"
+
+experience:
+  - role: Security Analyst (secondment)
+    org: National agency
+    place: Republic of Korea
+    period: May 2025 – Present
+    details:
+      - Incident response, digital forensics, and AI system development
+  - role: Cyber Warfare Officer
+    org: Ministry of National Defense
+    place: Republic of Korea
+    period: 2015 – Present
+    details:
+      - Cyber operations, instruction, and operational planning
+  - role: Graduate Research Assistant
+    org: University of Colorado Boulder
+    period: Oct 2022 – Aug 2023
+  - role: Software Developer (Google Summer of Code)
+    org: GNSS-SDR
+    period: May 2022 – Sep 2022
+
+teaching:
+  - role: Instructor
+    org: National Security Research Institute (NSR)
+    place: Republic of Korea
+    period: Apr 2026 – Sep 2026
+    details:
+      - '"Applying Ontologies with Local LLMs," for government and public-sector staff'
+  - role: Penetration Testing Instructor
+    org: ROK Armed Forces deployment
+    place: UAE
+    period: Aug 2024 – Mar 2025
+  - role: Graduate Teaching Assistant
+    org: University of Colorado Boulder
+    period: Aug 2021 – May 2023
+    details:
+      - Human-Centered Computing, Data Structures, Cybersecurity
+
+awards:
+  - title: 3rd Place (Public Sector)
+    event: CCE 2025 (Cyber Conflict Exercise)
+    date: Sep 2025
+  - title: 1st Place
+    event: Defence Cyber Marvel 3
+    org: British Army Cyber Association
+    date: Feb 2024
+  - title: Best Research Paper
+    org: Republic of Korea Army
+    date: Jul 2023
+  - title: Top Performer
+    event: Cybersecurity Operator Training
+    org: Minister of National Defense
+    date: Nov 2020
+  - title: Top Performer
+    event: Officer Advanced Course
+    org: Army Chief of Staff
+    date: Feb 2019
+  - title: 1st Place
+    event: Ministry of National Defense Hackathon
+    date: Dec 2016
+
+certifications:
+  - name: OSCP+ (OffSec Certified Professional+)
+    issuer: OffSec
+    date: Feb 2026
+  - name: CPTS (Certified Penetration Testing Specialist)
+    issuer: Hack The Box
+    date: Mar 2025

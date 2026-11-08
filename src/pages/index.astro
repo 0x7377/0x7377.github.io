@@ -1,0 +1,132 @@
+---
+import { marked } from 'marked';
+import Base from '../layouts/Base.astro';
+import Item from '../components/Item.astro';
+import Links from '../components/Links.astro';
+import { profile, news, projects, cv, publications, withBase } from '../lib/data';
+
+const md = (text: string) => marked.parseInline(text, { async: false });
+const join = (...parts: (string | undefined)[]) => parts.filter(Boolean).join(', ');
+
+const pubGroups = [
+  { title: 'International', items: publications.filter((p) => p.group === 'international') },
+  { title: 'Domestic (Korean)', items: publications.filter((p) => p.group === 'domestic') },
+].filter((g) => g.items.length > 0);
+const hasCorresponding = publications.some((p) => p.authors.some((a) => a.corresponding));
+
+const contactLinks = profile.links.filter((l) => l.url);
+const showPhotoPlaceholder = !profile.photo && import.meta.env.DEV;
+const updated = new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+
+const nav = [
+  ['about', 'About'], ['news', 'News'], ['publications', 'Publications'], ['projects', 'Projects'],
+  ['education', 'Education'], ['experience', 'Experience'], ['awards', 'Awards'],
+];
+const cvUrl = profile.links.find((l) => l.label === 'CV')?.url;
+---
+<Base>
+  <nav aria-label="Main">
+    {nav.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}
+    {cvUrl && <a href={cvUrl}>CV</a>}
+    <a class="ext" href={profile.writing_url} target="_blank" rel="noopener">Writing ↗</a>
+  </nav>
+
+  <section class:list={['intro', { 'no-photo': !profile.photo && !showPhotoPlaceholder }]} id="about">
+    <div>
+      <h1>{profile.name}</h1>
+      {profile.intro.map((p) => <p set:html={md(p)} />)}
+      {contactLinks.length > 0 && (
+        <p class="contact">
+          {contactLinks.map((l, i) => (
+            <>{i > 0 && ' / '}<a href={l.url} target={/^https?:/.test(l.url) ? '_blank' : undefined} rel="noopener">{l.label}</a></>
+          ))}
+        </p>
+      )}
+    </div>
+    {profile.photo && <img class="photo" src={withBase(profile.photo)} alt={`Photo of ${profile.name}`} />}
+    {showPhotoPlaceholder && <div class="photo placeholder" aria-hidden="true">photo</div>}
+  </section>
+
+  <section id="news">
+    <h2>News</h2>
+    <ul>{news.map((n) => <li>{n.date}: <Fragment set:html={md(n.text)} /></li>)}</ul>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    {pubGroups.map((g) => (
+      <>
+        <h3>{g.title}</h3>
+        {g.items.map((p) => (
+          <Item>
+            <div class="title"><span class="tag">[{p.label}]</span>{p.title}</div>
+            <div>
+              {p.authors.map((a, i) => (
+                <>{i > 0 && (i === p.authors.length - 1 ? (p.authors.length > 2 ? ', and ' : ' and ') : ', ')}<span class:list={{ me: a.self }}>{a.name}</span>{a.corresponding && '†'}</>
+              ))}
+            </div>
+            <div>{p.venue}{p.award && <> <span class="note">({p.award})</span></>}</div>
+            <Links links={p.links} />
+          </Item>
+        ))}
+      </>
+    ))}
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    {projects.map((p) => (
+      <Item>
+        <div class="title">{p.title}</div>
+        <div set:html={md(p.description)} />
+        {p.meta && <div class="muted">{p.meta}</div>}
+        <Links links={p.links} />
+      </Item>
+    ))}
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      {cv.education.map((e) => (
+        <li>{join(e.degree, e.school, e.place)} ({e.year})
+          {e.details.length > 0 && <ul>{e.details.map((d) => <li>{d}</li>)}</ul>}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Work Experience</h2>
+    <ul>
+      {cv.experience.map((e) => (
+        <li>{join(e.role, e.org, e.place, e.period)}
+          {e.details.length > 0 && <ul>{e.details.map((d) => <li>{d}</li>)}</ul>}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching Experience</h2>
+    <ul>
+      {cv.teaching.map((e) => (
+        <li>{join(e.role, e.org, e.place, e.period)}
+          {e.details.length > 0 && <ul>{e.details.map((d) => <li>{d}</li>)}</ul>}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section id="awards">
+    <h2>Awards &amp; Honors</h2>
+    <ul>{cv.awards.map((a) => <li>{join(a.title, a.event, a.org, a.date)}</li>)}</ul>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>{cv.certifications.map((c) => <li>{join(c.name, c.issuer, c.date)}</li>)}</ul>
+  </section>
+
+  <footer>{hasCorresponding && <>† Corresponding author · </>}Last updated: {updated}</footer>
+</Base>
