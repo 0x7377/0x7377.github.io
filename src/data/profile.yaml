@@ -25,7 +25,7 @@ links:
   - label: CV
     url: ""            # TODO: add CV PDF (e.g. /cv.pdf in public/)
   - label: Email
-    url: ""            # TODO: confirm whether to publish an email address
+    url: mailto:wsun1022@gmail.com
   - label: Google Scholar
     url: ""            # TODO
   - label: GitHub
